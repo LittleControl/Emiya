@@ -37,5 +37,18 @@ previous_posts_link();
  
 <?php endif; ?>
 <?php wp_footer(); ?>
+<hr>
+<div id="header">
+    <h1><a href="<?php bloginfo('url')?>"><?php bloginfo('name') ?></a></h1>
+    <?php bloginfo('description') ?>
+</div>
+<div id="container">
+    <?php if(have_posts()) : ?>
+        <?php while(have_posts()) : the_post(); ?>
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php endwhile ?>
+    <?php endif;?>
+    <hr>
+</div>
 </body>
 </html>
